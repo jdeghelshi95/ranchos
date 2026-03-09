@@ -1,66 +1,83 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
-import LandingPage from "../pages/Landing.jsx"
-import Airbnb from "../components/properties/AirbnbEmbed.astro"
-import BannerPic from "../components/pictures/MediaGallery.astro"
-import Banner from "../components/pictures/Banner.astro"
-import heroImage from "../assets/gallery/DJI_20260221082429_0015_D.jpg"
-
-
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import LandingPage from "../pages/Landing.jsx";
+import Airbnb from "../components/properties/AirbnbEmbed.astro";
+import BannerPic from "../components/pictures/MediaGallery.astro";
+import Banner from "../components/pictures/Banner.astro";
+import heroImage from "../assets/gallery/DJI_20260221082429_0015_D.jpg";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-		
-		<Banner src={heroImage} alt="Ranch landscape">
-  			<h1 style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.6);">
-   				 Welcome to the Ranch
- 			</h1>
-		</Banner>
-			
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<div class="flex ">
-			<Airbnb id="1514761523106706994" description='Rancho Pequeno'/>
-			<Airbnb id="1522655574018031893" description='Rancho Grande'/>
-			</div>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <Banner src={heroImage} alt="Ranch landscape">
+        <h1 style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.6);">
+          Welcome to the Ranch
+        </h1>
+      </Banner>
+	  <break/>
+      <p>
+        Bienvenidos a Ranchos del Sol, un refugio exclusivo donde el descanso,
+        la aventura y la belleza natural de la costa se unen para crear una
+        experiencia inolvidable. Nuestros elegantes alojamientos estilo Airbnb
+        están diseñados para brindarte comodidad, privacidad y el ambiente
+        perfecto para disfrutar del paraíso. Para que aproveches al máximo tu
+        visita, también ofrecemos renta de vehículos, permitiéndote explorar la
+        región a tu propio ritmo. Además, podrás vivir experiencias únicas con
+        nuestros tours privados en lancha, recorriendo las impresionantes aguas
+        de Costa del Sol y descubriendo la belleza natural de Isla Tasajera. En
+        Ranchos del Sol, cada detalle está pensado para que tu estancia sea
+        relajante, exclusiva y llena de momentos inolvidables frente al mar.
+      </p>
+      <p>
+        This template comes with a few integrations already configured in your
+        <code>astro.config.mjs</code> file. You can customize your setup with
+        <a href="https://astro.build/integrations">Astro Integrations</a> to add tools
+        like Tailwind, React, or Vue to your project.
+      </p>
+      <p>Here are a few ideas on how to get started with the template:</p>
+      <div class="flex">
+        <Airbnb id="1514761523106706994" description="Rancho Pequeno" />
+        <Airbnb id="1522655574018031893" description="Rancho Grande" />
+      </div>
+      <ul>
+        <li>Edit this page in <code>src/pages/index.astro</code></li>
+        <li>
+          Edit the site header items in <code>src/components/Header.astro</code>
+        </li>
+        <li>
+          Add your name to the footer in <code
+            >src/components/Footer.astro</code>
+        </li>
+        <li>
+          Check out the included blog posts in <code>src/content/blog/</code>
+        </li>
+        <li>
+          Customize the blog post page layout in <code
+            >src/layouts/BlogPost.astro</code>
+        </li>
+      </ul>
+      <p>
+        Have fun! If you get stuck, remember to
+        <a href="https://docs.astro.build/">read the docs</a>
+        or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
+      </p>
+      <p>
+        Looking for a blog template with a bit more personality? Check out
+        <a href="https://github.com/Charca/astro-blog-template"
+          >astro-blog-template</a
+        >
+        by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+      </p>
+    </main>
+    <Footer />
+  </body>
 </html>
