@@ -18,13 +18,14 @@ import heroImage from "../assets/gallery/DJI_20260221082429_0015_D.jpg";
   <body>
     <Header />
     <main>
-      <Banner src={heroImage} alt="Ranch landscape">
-        <h1 style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.6);">
-          Welcome to the Ranch
+      <Banner src={heroImage} alt="Ranch landscape" 
+	    height={{ mobile: "15vh", tablet: "15vh", desktop: "30vh" }}>
+        <h1 style="color: white; text-shadow: 0 4px 8px rgba(0,0,0,0.6);">
+          Ranchos El Salvador
         </h1>
       </Banner>
 	  <break/>
-      <p>
+      <p class="p-4 my-20">
         Bienvenidos a Ranchos del Sol, un refugio exclusivo donde el descanso,
         la aventura y la belleza natural de la costa se unen para crear una
         experiencia inolvidable. Nuestros elegantes alojamientos estilo Airbnb
@@ -38,12 +39,12 @@ import heroImage from "../assets/gallery/DJI_20260221082429_0015_D.jpg";
         relajante, exclusiva y llena de momentos inolvidables frente al mar.
       </p>
       <p>
-        This template comes with a few integrations already configured in your
+        <!-- This template comes with a few integrations already configured in your
         <code>astro.config.mjs</code> file. You can customize your setup with
         <a href="https://astro.build/integrations">Astro Integrations</a> to add tools
-        like Tailwind, React, or Vue to your project.
+        like Tailwind, React, or Vue to your project. -->
       </p>
-      <p>Here are a few ideas on how to get started with the template:</p>
+      <!-- <p>Here are a few ideas on how to get started with the template:</p> -->
       <div class="flex">
         <Airbnb id="1514761523106706994" description="Rancho Pequeno" />
         <Airbnb id="1522655574018031893" description="Rancho Grande" />
