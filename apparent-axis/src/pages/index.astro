@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import LandingPage from "../pages/Landing.jsx"
 import Airbnb from "../components/properties/AirbnbEmbed.astro"
+import BannerPic from "../components/pictures/MediaGallery.astro"
 ---
 
 <!doctype html>
@@ -15,6 +16,11 @@ import Airbnb from "../components/properties/AirbnbEmbed.astro"
 	<body>
 		<Header />
 		<main>
+			<div class="min-w-full bg-amber-950" >
+				<div class="bg-blue-800 w-150">
+				<BannerPic class="bg-amber-950 w-full"/>	
+				</div>
+			</div>
 			
 			<h1 class="text-3xl font-bold underline ">Ranchos Costa del Sol</h1>
 			<p>

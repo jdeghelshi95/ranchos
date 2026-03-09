@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  /** Optional title above the gallery */
+  title?: string;
+  /** Number of columns in the grid (default: 3) */
+  columns?: 1 | 2 | 3 | 4;
+  /**
+   * Video files to display (paths relative to public/, e.g. ["videos/tour.mp4"]).
+   * Place video files in public/videos/.
+   */
+  videos?: { src: string; poster?: string }[];
+}
+
+const { title, columns = 3, videos = [] } = Astro.props;
+
+// Auto-load every image from src/assets/gallery/
+const imageModules = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/gallery/*.{jpeg,jpg,png,gif,webp,avif,svg}",
+  { eager: true }
+);
+
+const images = Object.entries(imageModules).map(([path, mod]) => ({
+  src: mod.default,
+  alt: path.split("/").pop()?.replace(/\.[^.]+$/, "").replace(/[-_]/g, " ") ?? "",
+}));
+
+const colClass: Record<number, string> = {
+  1: "grid-cols-1",
+  2: "grid-cols-1 sm:grid-cols-2",
+  3: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
+  4: "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4",
+};
+---
+
+<section class="media-gallery w-full py-6">
+  {title && <h2 class="text-2xl font-semibold mb-4">{title}</h2>}
+
+  <div class={`grid gap-4 ${colClass[columns]}`}>
+    {images.map(({ src, alt }) => (
+      <div class="overflow-hidden rounded-2xl shadow w-full">
+        <Image
+          src={src}
+          alt={alt}
+          widths={[900, 900, 2000]}
+          sizes="(max-width: 640px) 200vw, (max-width: 1024px) 100vw, 100vw"
+          class="w-full h-auto object-cover transition-transform duration-300 hover:scale-105"
+        />
+      </div>
+    ))}
+
+    {videos.map(({ src, poster }) => (
+      <div class="overflow-hidden rounded-2xl shadow">
+        <video
+          controls
+          preload="metadata"
+          poster={poster}
+          class="w-full h-auto object-cover"
+        >
+          <source src={`/${src}`} type={`video/${src.split(".").pop()}`} />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    ))}
+  </div>
+</section>
