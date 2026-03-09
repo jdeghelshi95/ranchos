@@ -6,6 +6,10 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import LandingPage from "../pages/Landing.jsx"
 import Airbnb from "../components/properties/AirbnbEmbed.astro"
 import BannerPic from "../components/pictures/MediaGallery.astro"
+import Banner from "../components/pictures/Banner.astro"
+import heroImage from "../assets/gallery/DJI_20260221082429_0015_D.jpg"
+
+
 ---
 
 <!doctype html>
@@ -16,13 +20,13 @@ import BannerPic from "../components/pictures/MediaGallery.astro"
 	<body>
 		<Header />
 		<main>
-			<div class="min-w-full bg-amber-950" >
-				<div class="bg-blue-800 w-150">
-				<BannerPic class="bg-amber-950 w-full"/>	
-				</div>
-			</div>
+		
+		<Banner src={heroImage} alt="Ranch landscape">
+  			<h1 style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.6);">
+   				 Welcome to the Ranch
+ 			</h1>
+		</Banner>
 			
-			<h1 class="text-3xl font-bold underline ">Ranchos Costa del Sol</h1>
 			<p>
 				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
 				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
