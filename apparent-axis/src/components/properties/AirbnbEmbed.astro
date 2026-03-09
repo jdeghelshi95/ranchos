@@ -1,0 +1,22 @@
+---
+interface Props {
+  id: string;
+  description: string;
+}
+
+const { id, description } = Astro.props;
+const listingUrl = `https://www.airbnb.com/rooms/${id}?guests=1&adults=1&s=66&source=embed_widget`;
+
+---
+
+<div
+  class="airbnb-embed-frame"
+  data-id={id}
+  data-view="home"
+  data-hide-price="true"
+  style="width: 450px; height: 300px; margin: auto;"
+>
+  <a href={listingUrl}>View On Airbnb</a>
+  <a href={listingUrl} rel="nofollow">{description} </a>
+  <script async src="https://www.airbnb.com/embeddable/airbnb_jssdk"></script>
+</div>
